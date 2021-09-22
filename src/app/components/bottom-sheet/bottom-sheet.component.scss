@@ -12,6 +12,9 @@ $whiteColor: #fff;;
         opacity: 0.5;
         border-radius: 5px 5px 0px 0px;
         transition: height 1s;  
+        -webkit-transition: height 1s;
+        -moz-transition: height 1s;
+        -o-transition: height 1s;
 
         &__button {
             position: relative;
@@ -22,8 +25,12 @@ $whiteColor: #fff;;
             background-color: $whiteColor;
 
             &__close {
+                position: fixed;
+                width: 15px;
+                right: 10px;
+                color: $whiteColor;
                 font-size: 20px;
-                color: $whiteColor
+                font-weight: bold;
             }
         }
 
