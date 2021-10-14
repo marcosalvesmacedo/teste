@@ -1,65 +1,19 @@
 <div class="bottom__sheet" tabindex="0">
     
     <div class="bottom__sheet__button"></div>
-    <div class="bottom__sheet__button__close" tabindex="1">
-        X
-    </div>
     <div class="bottom__sheet__info">
      
-        <span class="bottom__sheet__total">
+        <span class="bottom__sheet__info__total">
             Total
         </span>
-        <span class="bottom__sheet__total__value">
-            R$ 10.000,00
+        <span class="bottom__sheet__info__total__value">
+            {{ totalValue | currency:'BRL' }}
         </span>
         
     </div>
     <div class="bottom__sheet__info__simulation">
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
+        <div class="bottom__sheet__button__close" tabindex="1">X</div>
+        <ng-content></ng-content>
     </div>
     
 </div>

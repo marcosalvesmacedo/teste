@@ -1,0 +1,5 @@
+<mat-stepper (selectionChange)="changeStep($event)">
+    <mat-step *ngFor="let step of steps" label="{{step.name}}">
+        <router-outlet></router-outlet>
+    </mat-step>
+  </mat-stepper>
