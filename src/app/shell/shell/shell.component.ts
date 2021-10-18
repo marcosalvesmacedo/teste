@@ -14,7 +14,7 @@ export class ShellComponent {
   ]
   constructor(
     private router: Router
-  ) { }
+  ) {}
 
   changeStep(event:any) {
     const selectedStep = 'passo-'.concat(event.selectedIndex + 1);

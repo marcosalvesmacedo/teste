@@ -10,6 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
 import { ShellModule } from './shell/shell/shell.module';
+import { LoginComponent } from './features/account/login/login.component';
+import { CreateAccountComponent } from './features/account/create-account/create-account.component';
+import { AuthenticationComponent } from './features/account/authentication/authentication.component';
 
 registerLocaleData(localePt)
 
@@ -17,6 +20,9 @@ registerLocaleData(localePt)
   declarations: [
     AppComponent,
     BottomSheetComponent,
+    LoginComponent,
+    CreateAccountComponent,
+    AuthenticationComponent,
   ],
   imports: [
     BrowserModule,
