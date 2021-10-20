@@ -11,15 +11,15 @@ const routes: Routes = [
     component: ShellComponent,
     children: [
       {
-        path: 'passo-1',
+        path: 'link1',
         component: Componente1Component
       },
       {
-        path: 'passo-2',
+        path: 'link2',
         component: Componente2Component
       },
       {
-        path: 'passo-3',
+        path: 'link3',
         component: Componente3Component
       },
     ] 

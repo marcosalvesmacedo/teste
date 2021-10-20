@@ -1,7 +1,7 @@
 module.exports = [
     {
         method: 'GET',
-        path: '/usuarios',
+        path: '/api/v1/authentication/user/usuarios',
         handler: (request, h) => {
             return require('../data/usuarios.json'); 
         }

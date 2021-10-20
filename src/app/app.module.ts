@@ -13,6 +13,8 @@ import { ShellModule } from './shell/shell/shell.module';
 import { LoginComponent } from './features/account/login/login.component';
 import { CreateAccountComponent } from './features/account/create-account/create-account.component';
 import { AuthenticationComponent } from './features/account/authentication/authentication.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 registerLocaleData(localePt)
 
@@ -28,10 +30,13 @@ registerLocaleData(localePt)
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatStepperModule,
     MatIconModule,
     BrowserAnimationsModule,
-    ShellModule
+    ShellModule,
+    NgbModule
   ],
   providers: [{
     provide: LOCALE_ID, 
