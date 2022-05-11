@@ -1,20 +1,25 @@
 import { registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import localePt from '@angular/common/locales/pt';
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID, NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatSliderModule } from '@angular/material/slider';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
-import { ShellModule } from './shell/shell/shell.module';
-import { LoginComponent } from './features/account/login/login.component';
 import { CreateAccountComponent } from './features/account/create-account/create-account.component';
-import { AuthenticationComponent } from './features/account/authentication/authentication.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './features/account/login/login.component';
+import { WelcomeModule } from './features/welcome/welcome.module';
+import { ShellModule } from './shell/shell/shell.module';
 
 registerLocaleData(localePt)
 
@@ -23,8 +28,7 @@ registerLocaleData(localePt)
     AppComponent,
     BottomSheetComponent,
     LoginComponent,
-    CreateAccountComponent,
-    AuthenticationComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,
@@ -34,14 +38,20 @@ registerLocaleData(localePt)
     ReactiveFormsModule,
     MatStepperModule,
     MatIconModule,
+    MatSliderModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
     BrowserAnimationsModule,
     ShellModule,
+    WelcomeModule,
     NgbModule
   ],
   providers: [{
     provide: LOCALE_ID, 
     useValue: "pt-BR"
   }],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

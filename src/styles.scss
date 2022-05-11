@@ -1,7 +1,85 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css"; 
+@import "../node_modules/bootstrap/scss/bootstrap";
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+.input {
+    &__full {
+        &__col {
+            &__width {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.group {
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+        
+        &__right {
+            justify-content: end;
+        }
+
+        &__left {
+            justify-content: start;
+        }
+        @include media-breakpoint-down(xl) {
+            flex-direction: column;
+        }
+
+        &__login, &__account {
+            width: 150px;
+        }
+        
+        &__common {
+            margin-right: 10px !important;
+            width: 200px;
+        }
+
+        &__login {
+            margin-right: 10px !important;
+        }  
+        
+        @include media-breakpoint-down(xl) {
+            &__login, &__account, &__common {
+                width: 100%;
+            }
+
+            &__account, &__common {
+                margin-top: 10px !important;
+            }
+        }
+
+    }
+}
+
+.margin__left {
+    margin-left: 10px;
+}
+
+@include media-breakpoint-down(xl) {
+    .xl {
+        &__down {
+            display: block;
+        }
+
+        &__up {
+            display: none;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .xl {
+        &__down {
+            display: none;
+        }
+
+        &__up {
+            display: block;
+        }
+    }
+}

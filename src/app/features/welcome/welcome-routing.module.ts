@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { WelcomeComponent } from './welcome.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./shell/shell/shell.module').then(m => m.ShellModule),
-    
+    component: WelcomeComponent,
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class WelcomeRoutingModule { }

@@ -1,28 +1,90 @@
-<h2 class="text-center">Entrar</h2>
+<div class="container">
 
-<div class="offset-md-4 col-md-4">
-    <form (ngSubmit)="onSubmit()" #form="ngForm">
-        <div class="form-group">
-            <label>Email</label>
-            <input 
-                class="form-control"
-                type="email"
-                name="email"
-                id="email"
-                [(ngModel)]="login.email"
-                required />
+    <form (ngSubmit)="onSubmit()" #form="ngForm" [formGroup]="loginForm">
+
+        <h2 class="text-center text-muted">Acessar a X Empresa</h2>
+    
+        <div class="row">
+    
+            <div class="offset-xl-4 col-xl-4 col-xs-4">
+            
+                <mat-form-field 
+                    appearance="outline"
+                    class="input__full__col__width">
+                    <mat-label>
+                        E-mail
+                    </mat-label>
+                    <input
+                    matInput
+                    type="email"
+                    name="email"
+                    id="email"
+                    formControlName="email"/>
+                </mat-form-field>
+     
+            </div>
         </div>
-        <div class="form-group">
-            <label>Senha</label>
-            <input 
-                class="form-control"
-                type="password"
-                name="password"
-                id="password"
-                [(ngModel)]="login.password" 
-                required/>
+
+        <div class="row">
+            <div class="offset-xl-4 col-xl-4 col-xs-4">
+    
+                <mat-form-field 
+                    appearance="outline"
+                    class="input__full__col__width">
+                    <mat-label>
+                        Senha
+                    </mat-label>
+                    <input
+                    matInput
+                    type="password"
+                    name="password"
+                    id="password"
+                    formControlName="password"/>
+                </mat-form-field>
+    
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-block" [disabled]="form.form.invalid">Entrar</button>
-        <button type="button" class="btn btn-link btn-block" [routerLink]="['/create-account']">Criar conta</button>
+
+        <div class="row">   
+            <div class="offset-xl-4 col-xl-4 col-xs-4">
+                <div class="group__buttons__right">
+
+                    <button 
+                        type="submit"
+                        mat-raised-button
+                        color="primary"
+                        [disabled]="form.form.invalid"
+                        class="group__buttons__login">
+                        Entrar
+                    </button>
+                    
+                    <button 
+                        type="button" 
+                        mat-raised-button
+                        color="accent"
+                        [routerLink]="['/create-account']"
+                        class="group__buttons__account">
+                        Criar conta
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="offset-xl-4 col-xl-4 col-xs-4 text-justify mt-4"> 
+                <span 
+                    class="text-muted">
+                    Ao entrar na X empresa, você concorda com os nossos 
+                    <a 
+                        href="#"
+                        class="text-reset">
+                        Termos e Política de Privacidade.
+                    </a>
+                </span>
+            </div>
+        </div>
+        
     </form>
+
 </div>

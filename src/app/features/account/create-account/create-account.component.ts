@@ -1,22 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { CreateAccountState } from '../states/create-account.state';
 
 @Component({
   selector: 'app-create-account',
   templateUrl: './create-account.component.html',
   styleUrls: ['./create-account.component.scss']
 })
-export class CreateAccountComponent implements OnInit {
+export class CreateAccountComponent {
   public account = {
     name: '',
     email: '',
     password: ''
   }
-  constructor() { }
+  constructor(
+    private createAccountState: CreateAccountState
+  ) { }
 
-  ngOnInit(): void {
-  }
+    public get createAccountForm(): FormGroup {
+      return this.createAccountState.getCreateAccountForm();
+    }
 
-  onSubmit(): void {
-    
-  }
+    public onSubmit(): void {
+      console.log('form create account', this.createAccountForm);
+    }
 }

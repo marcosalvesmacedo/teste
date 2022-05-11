@@ -1,9 +1,24 @@
-<!-- <mat-stepper (selectionChange)="changeStep($event)">
-    <mat-step *ngFor="let step of steps" label="{{step.name}}"> -->
-        <p>Menu da segunda página</p>
-        <a routerLink="link1">link1</a>
+
+        <!-- <a routerLink="welcome">link1</a>
         <br>
         <a routerLink="link2">link2</a>
+        <br>
+        <a routerLink="link3">link3</a>
+        <br> -->
+
+<mat-toolbar 
+    color="primary">
+    <img 
+        src="./assets/images/logo.png"
+        width="50px"/>
+    <span class="margin__left xl__up">Business Intelligence Manager</span>
+    <span class="margin__left xl__down">B.I. Manager</span>
+</mat-toolbar>
+    
+    <div class="content">
         <router-outlet></router-outlet>
-    <!-- </mat-step>
-  </mat-stepper> -->
+    </div>
+    
+    <div class="footer">
+    
+    </div>
