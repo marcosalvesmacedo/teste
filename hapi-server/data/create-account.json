@@ -1,0 +1,6 @@
+{ 
+    "success": "account created",
+    "code": "201",
+    "name": "Teste Account",
+    "email": "teste@teste.com.br"
+}

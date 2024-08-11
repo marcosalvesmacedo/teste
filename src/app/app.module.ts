@@ -10,16 +10,18 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
-import { CreateAccountComponent } from './features/account/create-account/create-account.component';
-import { LoginComponent } from './features/account/login/login.component';
+import { CreateAccountComponent } from './features/account/components/create-account/create-account.component';
+import { LoginComponent } from './features/account/components/login/login.component';
 import { WelcomeModule } from './features/welcome/welcome.module';
 import { ShellModule } from './shell/shell/shell.module';
+import { SnakbarComponent } from './components/snakbar/snakbar.component';
 
 registerLocaleData(localePt)
 
@@ -28,7 +30,8 @@ registerLocaleData(localePt)
     AppComponent,
     BottomSheetComponent,
     LoginComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    SnakbarComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +45,7 @@ registerLocaleData(localePt)
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatSnackBarModule,
     BrowserAnimationsModule,
     ShellModule,
     WelcomeModule,
@@ -51,7 +55,11 @@ registerLocaleData(localePt)
     provide: LOCALE_ID, 
     useValue: "pt-BR"
   }],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [AppComponent]
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

@@ -1,33 +1,13 @@
 <div class="container">
 
-    <form (ngSubmit)="onSubmit()" #form="ngForm" [formGroup]="createAccountForm">
+    <form (ngSubmit)="onSubmit()" #form="ngForm" [formGroup]="accountFacade.loginForm">
 
-        <h2 class="text-center text-muted">Criar uma conta na X Empresa</h2>
-        
+        <h2 class="text-center text-muted">Acessar a X Empresa</h2>
+    
         <div class="row">
+    
             <div class="offset-xl-4 col-xl-4 col-xs-4">
-
-                <mat-form-field 
-                    appearance="outline"
-                    class="input__full__col__width">
-                    <mat-label>
-                        Nome
-                    </mat-label>
-                    <input
-                    matInput
-                    type="name"
-                    name="name"
-                    id="name"
-                    formControlName="name"
-                    [(ngModel)]="account.name" />
-                </mat-form-field>
-
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="offset-xl-4 col-xl-4 col-xs-4">
-
+            
                 <mat-form-field 
                     appearance="outline"
                     class="input__full__col__width">
@@ -39,16 +19,15 @@
                     type="email"
                     name="email"
                     id="email"
-                    formControlName="email"
-                    [(ngModel)]="account.email" />
+                    formControlName="email"/>
                 </mat-form-field>
-
+     
             </div>
         </div>
 
         <div class="row">
             <div class="offset-xl-4 col-xl-4 col-xs-4">
-
+    
                 <mat-form-field 
                     appearance="outline"
                     class="input__full__col__width">
@@ -60,39 +39,38 @@
                     type="password"
                     name="password"
                     id="password"
-                    formControlName="password"
-                    [(ngModel)]="account.password" />
+                    formControlName="password"/>
                 </mat-form-field>
-
+    
             </div>
         </div>
-        
+
         <div class="row">   
             <div class="offset-xl-4 col-xl-4 col-xs-4">
-                <div class="group__buttons">
+                <div class="group__buttons__right">
 
                     <button 
                         type="submit"
                         mat-raised-button
                         color="primary"
-                        [disabled]="createAccountForm.invalid"
+                        [disabled]="form.form.invalid"
                         class="group__buttons__login">
-                        Criar
+                        Entrar
                     </button>
                     
                     <button 
                         type="button" 
                         mat-raised-button
                         color="accent"
-                        [routerLink]="['/login']"
+                        [routerLink]="['/create-account']"
                         class="group__buttons__account">
-                        Voltar
+                        Criar conta
                     </button>
 
                 </div>
             </div>
-        </div>         
-         
+        </div>
+        
         <div class="row">
             <div class="offset-xl-4 col-xl-4 col-xs-4 text-justify mt-4"> 
                 <span 
@@ -108,4 +86,5 @@
         </div>
         
     </form>
+
 </div>
